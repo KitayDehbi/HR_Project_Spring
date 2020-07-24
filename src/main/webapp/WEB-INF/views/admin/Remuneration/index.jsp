@@ -26,35 +26,31 @@
 </head>
 <body>
 <div class="container" id="global">
-    <jsp:directive.include file="../layout/header.jsp" />
+    <jsp:directive.include file="../../layout/header.jsp" />
     <header class="col-lg-12">
         <h1>Tous les employees</h1>
         <div class="col-lg-12" id="btn">
-            <a href="${pageContext.request.contextPath}/admin/employees/add" class="btn btn-primary">
-                Ajouter Employee</a>
+            <a href="${pageContext.request.contextPath}/admin/remuneration/add" class="btn btn-primary">
+                Ajouter Remuneration</a>
             <br/>
         </div>
         <table id="example"  class="table table-striped table-bordered">
             <tr>
-                <th>Nom complet</th>
-                <th>Cin</th>
-                <th>Tel</th>
-                <th>email</th>
-                <th>grade</th>
-                <th>salaire</th>
-                <th>Ch Affaire</th>
+                <th>date </th>
+                <th>Type </th>
+                <th>Montant</th>
+                <th>Employee</th>
+
+
 
 
             </tr>
             <c:forEach items="${liste}" var="item">
                 <tr>
-                    <td><a href="${pageContext.request.contextPath}/admin/employees/${item.cin}">${item.nom}</a></td>
-                    <td>${item.cin}</td>
-                    <td>${item.tel}</td>
-                    <td>${item.email}</td>
-                    <td>${item.grade}</td>
-                    <td>${item.salaire}</td> 
-                    <td>${item.chiffre_affaire}</td>
+                    <td>${item.date_remuneration}</td>
+                    <td>${item.type}</td>
+                    <td>${item.montant}</td>
+                    <td><a href="${pageContext.request.contextPath}/admin/employees/${item.employee.cin}">${item.employee.nom}</a></td>
                 </tr>
             </c:forEach>
         </table>

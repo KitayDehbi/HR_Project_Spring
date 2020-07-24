@@ -12,14 +12,14 @@
 <html>
 <head>
     <title>Ajouter employee</title>
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet" />
+    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet"/>
     <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
 <body>
 
 <div class="container">
-    <jsp:directive.include file="../layout/header.jsp" />
+    <jsp:directive.include file="../../layout/header.jsp" />
     <header class="col-lg-12">
         <h1>Ajouter un Employee</h1>
         <form:errors path="employee" cssClass="alert-danger" />
@@ -91,7 +91,7 @@
                 </form:select>
                 <form:errors path="manager" cssClass="alert-danger" />
             </div>
-            <c:forEach items="${employees}"   var="emp">
+            <%--<c:forEach items="${employees}"   var="emp">
                 <c:choose>
                     <c:when test="${emp.used}">
                         <form:checkbox path="sous_jacents" value="${emp.id}" label="${ emp.nom }" checked="checked" />
@@ -104,7 +104,7 @@
                 </c:choose>
 
             </c:forEach>
-            <form:errors path="sous_jacents" cssClass="alert-danger" />
+            <form:errors path="sous_jacents" cssClass="alert-danger" />--%>
             <%--<div class="form-check">
                 <label class="form-check-label">
                     Tags

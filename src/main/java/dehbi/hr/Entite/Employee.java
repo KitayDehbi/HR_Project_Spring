@@ -73,7 +73,7 @@ public class Employee {
     @ManyToOne
     private Departement departement;
 
-    @OneToMany(cascade= CascadeType.ALL)
+    @OneToMany(cascade= CascadeType.ALL ,fetch = FetchType.EAGER)
     @JoinColumn(name="employee_id" )
     private List<Remuneration> remunerations;
 

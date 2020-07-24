@@ -24,16 +24,11 @@
 <body>
 <div class="container">
 
-    <jsp:directive.include file="../layout/header.jsp" />
+    <jsp:directive.include file="../../layout/header.jsp" />
 
     <div class="col-lg-12">
-        <h3>Departement : ${employee.departement.name}</h3>
-        <h3>Manager  : ${employee.manager.nom}</h3>
-        <h4>Nom : ${employee.nom}</h4>
-        <h4>Cin : ${employee.cin}</h4>
-        <h4>grade : ${employee.grade}</h4>
-        <h4>salaire : ${employee.salaire}</h4>
-        <h4>Sous-jascent  </h4>
+        <h3>Departement : ${departement.name}</h3>
+        <h4>Employee  </h4>
         <table class="table table-bordered">
             <tr>
                 <th>Nom complet</th>
@@ -59,6 +54,7 @@
                 </tr>
 
             </c:forEach>
+
         </table>
 
     </div>

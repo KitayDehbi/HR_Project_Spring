@@ -20,7 +20,7 @@ public class Remuneration {
     private short id;
     private String type;
     private double montant;
-    private Date date_remuneration;
+    private String date_remuneration;
     @ManyToOne
     private Employee employee;
 }
