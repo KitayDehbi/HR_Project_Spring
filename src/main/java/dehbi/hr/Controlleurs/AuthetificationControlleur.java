@@ -22,24 +22,19 @@ public class AuthetificationControlleur {
     private EmployeeService employeeService;
     @Autowired
     HttpSession httpSession;
-
     @RequestMapping("")
     public String index (ModelMap model , AuthUser user){
         model.addAttribute("user",user);
     return "Authetification/index";
     }
     @PostMapping("/login")
-    public String login(@Valid @ModelAttribute("user") AuthUser user , BindingResult result){
-        if(result.hasErrors()){
-            return "Authetification/index";
-        }
+    public String login(@Valid @ModelAttribute("user") AuthUser user ,
+                        BindingResult result){
+        if(result.hasErrors()) return "Authetification/index";
         Employee e=employeeService.getEmployeeByEmail(user.getEmail());
         httpSession.setAttribute("user", e);
-        if(e.is_admin()){
-            return "redirect:/admin/employees";
-        }
+        if(e.is_admin()) return "redirect:/admin/employees";
         return "redirect:/employee/profile";
-
-
     }
 }
+

@@ -28,7 +28,7 @@
 
     <div class="col-lg-12">
         <h3>Departement : ${departement.name}</h3>
-        <h4>Employee  </h4>
+        <h4>Employes  </h4>
         <table class="table table-bordered">
             <tr>
                 <th>Nom complet</th>

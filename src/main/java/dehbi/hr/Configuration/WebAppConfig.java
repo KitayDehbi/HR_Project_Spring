@@ -50,7 +50,7 @@ public class WebAppConfig implements WebMvcConfigurer {
     public void addInterceptors (InterceptorRegistry registry) {
         /*registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns(new String[]{
-                       "/admin/employees","/employee/profile"
+
                 }).excludePathPatterns("/");*/
 
         /*registry.addInterceptor(new Admininterceptor()).addPathPatterns(new String[]{

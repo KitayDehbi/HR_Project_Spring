@@ -21,58 +21,46 @@ import java.util.List;
 @AllArgsConstructor
 @Setter
 @Getter
-@Entity
-@Table(name = "employees")
 @UniqueCin
 @UniqueEmail
 @UniqueTel
+@Entity
+@Table(name = "employees")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private short id;
-
     @Column
     @NotBlank(message = "champ obligatoire")
     @Size(min = 6, message = "6 charatères au minimum ")
     private String nom;
-
     @Column
     @NotBlank(message = "champ obligatoire")
     @Size(min = 4, message = "4 charatères au minimum ")
     private String cin;
-
     @Column
     @NotBlank(message = "champ obligatoire")
     @Size(min = 10, max = 10 ,message = "Tel invalid")
     private String tel;
-
     @Column
     @Email(message = "email invalid")
     @NotBlank(message = "champ obligatoire")
     private String email;
-
-
     private String mot_de_passe;
-
     @Transient
     private String confirmer_mot_de_passe;
     @Transient
     private Boolean used;
     @NotBlank(message = "champ obligatoire")
     private String grade;
-
     @NotNull(message = "champ obligatoire")
     private double salaire;
-
     @Column
     private double chiffre_affaire;
-
     @Column
     private boolean is_admin;
-
     @ManyToOne
     private Departement departement;
-
     @OneToMany(cascade= CascadeType.ALL ,fetch = FetchType.EAGER)
     @JoinColumn(name="employee_id" )
     private List<Remuneration> remunerations;

@@ -14,7 +14,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Constraint(validatedBy = AuthenticationClass.class)
 @Documented
 public @interface Authentication {
-    String message() default "Wrong cridentials";
+    String message() default "Email ou mot de passe incorrect";
     Class<?>[] groups() default { };
     Class<? extends Payload>[] payload() default { };
 }

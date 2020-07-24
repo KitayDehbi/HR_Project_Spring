@@ -16,6 +16,7 @@ public interface EmployeeService {
     public Employee getEmployeeById(short id);
     void updateManager(Employee employee);
     boolean isExist(String email, String password);
-
     void sendEmail(Employee employee);
 }
+
+

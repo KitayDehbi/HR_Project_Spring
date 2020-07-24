@@ -10,9 +10,9 @@ import javax.validation.constraints.NotEmpty;
 @Setter
 @Authentication
 public class AuthUser {
-    @NotEmpty(message = "email cannot be empty")
+    @NotEmpty(message = "champ obligatoire")
     private String email;
-    @NotEmpty (message = "password cannot be empty")
+    @NotEmpty (message = "champ obligatoire")
     private String password;
 
 }

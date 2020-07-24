@@ -30,5 +30,6 @@ public interface EmployeeDao extends JpaRepository<Employee,Short> {
     @Query("select e from Employee e where e.id=:id")
     Employee getEmployeeById(@Param("id") short id);
     @Query("select e from Employee e where e.email=:email and e.mot_de_passe=:password")
-    Employee getEmployeeByEmailAndpassword(@Param("email") String email,@Param("password") String password);
+    Employee getEmployeeByEmailAndpassword(@Param("email")
+       String email,@Param("password") String password);
 }
